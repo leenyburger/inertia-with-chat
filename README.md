@@ -15,3 +15,4 @@ Skip pruning of dev dependencis by setting
 heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
 # or NPM_CONFIG_PRODUCTION=false in versions of npm < 7
 ```
+4. Remove     <%= stylesheet_link_tag "application" %> from your application.html.erb 
