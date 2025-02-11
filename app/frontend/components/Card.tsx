@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from '@inertiajs/react'
 import clsx from 'clsx'
 
 function ChevronRightIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -36,7 +36,11 @@ export function Card<T extends React.ElementType = 'div'>({
 Card.Link = function CardLink({
   children,
   ...props
-}: React.ComponentPropsWithoutRef<typeof Link>) {
+}: {
+  children: React.ReactNode
+  href: string
+  [key: string]: any
+}) {
   return (
     <>
       <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />

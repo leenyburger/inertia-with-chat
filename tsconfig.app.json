@@ -22,6 +22,15 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["app/frontend/*"]
+    },
+
+    /* Types */
+    "types": ["vite/client", "@inertiajs/react"]
   },
   "include": ["app/frontend"]
 }
