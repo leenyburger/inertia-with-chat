@@ -77,51 +77,51 @@ export default function Home() {
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="max-w-2xl">
-                <div className="inline-block bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-medium px-4 py-2 rounded-full mb-6">
-                  UPDATE: Cohort 2 is sold out! Join the waitlist for Cohort 3 🚀
-                </div>
-                <h1 className="text-6xl font-bold mb-8 leading-tight">
-                  You know you should be
-                  <div className="relative inline-block mx-4">
-                    <span className="gradient-text">"doing more marketing"</span>
-                    <div className="absolute -bottom-2 left-0 w-full h-4 bg-secondary opacity-20 -rotate-2"></div>
-                  </div>
-                </h1>
-                <p className="text-2xl mb-12 text-gray-600">
-                  But if you knew exactly what to do or how to do it, your SaaS would be earning $100K/month by now.
-                </p>
-                <div className="flex gap-6">
-                  <a 
-                    href="https://forms.gle/xvJVXJ2ht6MuEQfBA"
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    className="group bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-2"
-                  >
-                    Join the Waitlist
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="max-w-2xl">
+              <div className="text-primary inline-block bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-medium px-4 py-2 rounded-full mb-6">
+                UPDATE: Cohort 2 is sold out! Join the waitlist for Cohort 3 🚀
               </div>
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80"
-                  alt="Marketing strategy session"
-                  className="rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500"
-                />
-                <div className="absolute -bottom-6 -left-6">
-                  <div className="bg-white p-4 rounded-2xl shadow-xl">
-                    <img 
-                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=150"
-                      alt="Success metrics"
-                      className="w-32 h-32 object-cover rounded-xl"
-                    />
-                  </div>
+              <h1 className="text-6xl font-bold mb-8 leading-tight">
+                You know you should be{' '}
+                <span className="relative inline-block mx-4">
+                  <span className="gradient-text">"doing more marketing"</span>
+                  <div className="absolute -bottom-2 left-0 w-full h-4 bg-secondary opacity-20 -rotate-2"></div>
+                </span>
+              </h1>
+              <p className="text-2xl mb-12 text-gray-600">
+                But if you knew exactly what to do or how to do it, your SaaS would be earning $100K/month by now.
+              </p>
+              <div className="flex gap-6">
+                <a
+                  href="https://forms.gle/xvJVXJ2ht6MuEQfBA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center gap-2"
+                >
+                  Join the Waitlist
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80"
+                alt="Marketing strategy session"
+                className="rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500"
+              />
+              <div className="absolute -bottom-6 -left-6">
+                <div className="bg-white p-4 rounded-2xl shadow-xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=150"
+                    alt="Success metrics"
+                    className="w-32 h-32 object-cover rounded-xl"
+                  />
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
           <div className="absolute -right-64 top-32 w-[800px] h-[800px] bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full blur-3xl opacity-20"></div>
           <div className="absolute -left-64 -bottom-64 w-[800px] h-[800px] bg-gradient-to-r from-accent/30 to-primary/30 rounded-full blur-3xl opacity-20"></div>
@@ -442,20 +442,3 @@ export default function Home() {
     </>
   )
 }
-
-
-// export default function Home() {
-//   // let articles = (await getAllArticles()).slice(0, 4)
-
-//   return (
-//     <>
-//       <Head title="Hello World" />
-      
-//       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-//         <h1 className="text-3xl font-bold text-gray-900">
-//           Hello World
-//         </h1>
-//       </div>
-//     </>
-//   )
-// }

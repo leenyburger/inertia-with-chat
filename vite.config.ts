@@ -10,6 +10,9 @@ export default defineConfig({
     tailwindcss(),
     RubyPlugin(),
   ],
+  optimizeDeps: {
+    exclude: ['lucide-react'],
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'app/frontend')
