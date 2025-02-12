@@ -2,3 +2,44 @@
 
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
+
+@layer base {
+  body {
+    @apply antialiased bg-gradient-to-br from-white to-gray-50;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-pink-500;
+}
+
+.blob {
+  border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  animation: blob 8s infinite;
+}
+
+.blob2 {
+  border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  animation: blob 10s infinite reverse;
+}
+
+@keyframes blob {
+  0% { border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%; }
+  25% { border-radius: 56% 42% 48% 72% / 56% 48% 42% 42%; }
+  50% { border-radius: 28% 72% 42% 56% / 48% 56% 72% 42%; }
+  75% { border-radius: 72% 28% 56% 42% / 42% 72% 48% 56%; }
+  100% { border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%; }
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) rotate(2deg);
+}
+
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+}
