@@ -82,7 +82,7 @@ export default function Home() {
               <div className="text-primary inline-block bg-gradient-to-r from-primary/10 to-secondary/10 text-primary font-medium px-4 py-2 rounded-full mb-6">
                 UPDATE: Cohort 2 is sold out! Join the waitlist for Cohort 3 🚀
               </div>
-              <h1 className="text-6xl font-bold mb-8 leading-tight">
+              <h1 className="bg-test text-6xl font-bold mb-8 leading-tight">
                 You know you should be{' '}
                 <span className="relative inline-block mx-4">
                   <span className="gradient-text">"doing more marketing"</span>
