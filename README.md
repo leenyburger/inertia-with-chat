@@ -23,3 +23,21 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
 - This application has Tailwind 3 installed via yarn. It does *not* use the tailwindcss-rails gem. Vite is loaded in `vite.config.ts` and tailwind is loaded per usual in `tailwind.config.js` 
 
 - The main "entry point" for tailwind is `frontend/application.css`
+  
+  ### To use Shadcn
+  - Add @tailwind imports instead of @import 
+  - Configure shadcn json file to create the components in the *existing* front end directory -> hard code the path (instead of using the @ alias)
+  
+
+
+
+
+  ##Dev Logs
+  Feb 13: 
+  [ ] Add a shadcn component to see what it looks like. 
+  [ ] Add flash messaging 
+
+
+  ## Resources 
+  https://way-too-mainstream.vercel.app/articles/add-authorization-flash-to-inertia-rails-app
+  https://github.com/inertiajs/inertia-rails/issues/27 
