@@ -11,8 +11,9 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Layout from '@/components/Layout'
 
-const Login: React.FC = () => {
+const Login = () => {
   const { data, setData, post, processing, errors } = useForm({
     user: {
       email: '',
@@ -27,7 +28,7 @@ const Login: React.FC = () => {
   }
 
   return (
-    <>
+    <Layout>
       <Head title="Login" />
       <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
         <div className="w-full max-w-sm">
@@ -94,7 +95,7 @@ const Login: React.FC = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 

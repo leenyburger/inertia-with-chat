@@ -50,3 +50,9 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
   (Vue Rails Inertia Tutorial) [https://codeando.dev/posts/rails-inertiajs/]
   (Rails and Inertia Medium Article)[https://medium.com/@sanchez.dav90/rails-and-inertia-js-the-modern-monolith-f898e22ad47f]
   (Ping CRM in Rails)[https://github.com/ledermann/pingcrm]
+
+
+
+  ## Ongoing questions about this stack
+  - Am I using the React Layout correctly? Do I have to wrap every page in Layout or is there a different way to do it?
+  - Review Vite config -> seems kinda delicate 
