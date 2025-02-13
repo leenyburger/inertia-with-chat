@@ -29,7 +29,8 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
   - Configure shadcn json file to create the components in the *existing* front end directory -> hard code the path (instead of using the @ alias)
   
 
-
+### Shadcn Resources 
+- Building Block: https://ui.shadcn.com/blocks/authentication
 
 
   ##Dev Logs
