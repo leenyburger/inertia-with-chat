@@ -46,3 +46,7 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
   ## Resources 
   https://way-too-mainstream.vercel.app/articles/add-authorization-flash-to-inertia-rails-app
   https://github.com/inertiajs/inertia-rails/issues/27 
+  (Evil Martians Blog)[https://evilmartians.com/chronicles/inertiajs-in-rails-a-new-era-of-effortless-integration]
+  (Vue Rails Inertia Tutorial) [https://codeando.dev/posts/rails-inertiajs/]
+  (Rails and Inertia Medium Article)[https://medium.com/@sanchez.dav90/rails-and-inertia-js-the-modern-monolith-f898e22ad47f]
+  (Ping CRM in Rails)[https://github.com/ledermann/pingcrm]
