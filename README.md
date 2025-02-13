@@ -40,7 +40,7 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
   Feb 13: 
   [X] Add a shadcn component to see what it looks like. 
   [x] Figure out how to submit login form as a shadcn component (inertia forms + shadcn logon)
-  [ ] Add flash messaging 
+  [x] Add flash messaging 
 
 
   ## Resources 
