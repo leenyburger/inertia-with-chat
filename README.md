@@ -32,10 +32,14 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
 ### Shadcn Resources 
 - Building Block: https://ui.shadcn.com/blocks/authentication
 
+### Resources/Tutorilas 
+- https://shreyasprakash.com/posts/home-cooked-apps-using-rails-8-react-inertia-js-and-shadcn/
+
 
   ##Dev Logs
   Feb 13: 
-  [ ] Add a shadcn component to see what it looks like. 
+  [X] Add a shadcn component to see what it looks like. 
+  [ ] Figure out how to submit login form as a shadcn component (inertia forms + shadcn logon)
   [ ] Add flash messaging 
 
 

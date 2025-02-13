@@ -1,94 +1,97 @@
-import { LoginForm } from "@/components/login-form"
+import { Head, useForm } from '@inertiajs/react'
+import React from 'react'
+import { cn } from "lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
-export default function Page() {
+const Login: React.FC = () => {
+  const { data, setData, post, processing, errors } = useForm({
+    user: {
+      email: '',
+      password: '',
+      remember: false,
+    }
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    post('/login')
+  }
+
   return (
-    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
-        <LoginForm />
+    <>
+      <Head title="Login" />
+      <div className="flex flex-col gap-6 max-w-md mx-auto mt-8">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Login</CardTitle>
+            <CardDescription>
+              Enter your email below to login to your account
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              <div className="grid gap-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={data.user.email || ''}
+                  onChange={e => setData('user', { ...data.user, email: e.target.value })}
+                  placeholder="m@example.com"
+                  required
+                />
+                {errors.email && (
+                  <div className="text-red-500 text-sm mt-1">{errors.email}</div>
+                )}
+              </div>
+              <div className="grid gap-2">
+                <div className="flex items-center">
+                  <Label htmlFor="password">Password</Label>
+                  <a
+                    href="#"
+                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                  >
+                    Forgot your password?
+                  </a>
+                </div>
+                <Input
+                  id="password"
+                  type="password"
+                  value={data.user.password || ''}
+                  onChange={e => setData('user', { ...data.user, password: e.target.value })}
+                  required
+                />
+                {errors.password && (
+                  <div className="text-red-500 text-sm mt-1">{errors.password}</div>
+                )}
+              </div>
+              <Button type="submit" className="w-full" disabled={processing}>
+                {processing ? 'Logging in...' : 'Login'}
+              </Button>
+              <Button variant="outline" className="w-full">
+                Login with Google
+              </Button>
+            </form>
+            <div className="mt-4 text-center text-sm">
+              Don&apos;t have an account?{" "}
+              <a href="#" className="underline underline-offset-4">
+                Sign up
+              </a>
+            </div>
+          </CardContent>
+        </Card>
       </div>
-    </div>
+    </>
   )
 }
 
-
-
-
-
-
-
-
-
-// import { Head, useForm } from '@inertiajs/react'
-// import React from 'react'
-
-// const Login: React.FC = () => {
-//   const { data, setData, post, processing, errors } = useForm({
-//     user: {
-//       email: '',
-//       password: '',
-//       remember: false,
-//     }
-//   })
-
-//   const handleSubmit = (e: React.FormEvent) => {
-//     e.preventDefault()
-//     post('/login')
-//   }
-
-//   return (
-//     <>
-//       <Head title="Login" />
-      
-//       <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 space-y-6">
-//         <div>
-//           <input
-//             type="email"
-//             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-//             value={data.user.email || ''}
-//             onChange={e => setData('user', { ...data.user, email: e.target.value })}
-//             placeholder="Email"
-//           />
-//           {errors.email && (
-//             <div className="text-red-500 text-sm mt-1">{errors.email}</div>
-//           )}
-//         </div>
-
-//         <div>
-//           <input
-//             type="password"
-//             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-//             value={data.user.password || ''}
-//             onChange={e => setData('user', { ...data.user, password: e.target.value })}
-//             placeholder="Password"
-//           />
-//           {errors.password && (
-//             <div className="text-red-500 text-sm mt-1">{errors.password}</div>
-//           )}
-//         </div>
-
-//         <div className="flex items-center">
-//           <input
-//             type="checkbox"
-//             className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-//             checked={data.user.remember}
-//             onChange={e => setData('user', { ...data.user, remember: e.target.checked })}
-//             id="remember"
-//           />
-//           <label htmlFor="remember" className="ml-2 text-gray-700">
-//             Remember Me
-//           </label>
-//         </div>
-
-//         <button
-//           type="submit"
-//           disabled={processing}
-//           className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
-//         >
-//           {processing ? 'Logging in...' : 'Login'}
-//         </button>
-//       </form>
-//     </>
-//   )
-// }
-
-// export default Login
+export default Login
