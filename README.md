@@ -26,7 +26,7 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
   
   ### To use Shadcn
   - Add @tailwind imports instead of @import 
-  - Configure shadcn json file to create the components in the *existing* front end directory -> hard code the path (instead of using the @ alias)
+  - There seems to be a very delicate balancing act between components.json, tsconfig.app.json, and tsconfig.json 
   
 
 ### Shadcn Resources 
