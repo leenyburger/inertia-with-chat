@@ -42,6 +42,9 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
   [x] Figure out how to submit login form as a shadcn component (inertia forms + shadcn logon)
   [x] Add flash messaging 
 
+  Feb 14: 
+  [ ] Put a basic shell in from shadcn (literally anything) as a dashboard and redirect there after logon
+  [ ]
 
   ## Resources 
   https://way-too-mainstream.vercel.app/articles/add-authorization-flash-to-inertia-rails-app
