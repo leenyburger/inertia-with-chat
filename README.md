@@ -23,3 +23,46 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
 - This application has Tailwind 3 installed via yarn. It does *not* use the tailwindcss-rails gem. Vite is loaded in `vite.config.ts` and tailwind is loaded per usual in `tailwind.config.js` 
 
 - The main "entry point" for tailwind is `frontend/application.css`
+  
+  ### To use Shadcn
+  - Add @tailwind imports instead of @import 
+  - There seems to be a very delicate balancing act between components.json, tsconfig.app.json, and tsconfig.json 
+  
+
+### Shadcn Resources 
+- Building Block: https://ui.shadcn.com/blocks/authentication
+
+### Resources/Tutorilas 
+- https://shreyasprakash.com/posts/home-cooked-apps-using-rails-8-react-inertia-js-and-shadcn/
+
+
+  ##Dev Logs
+  Feb 13: 
+  [X] Add a shadcn component to see what it looks like. 
+  [x] Figure out how to submit login form as a shadcn component (inertia forms + shadcn logon)
+  [x] Add flash messaging 
+
+  Feb 14: 
+  [ ] Put a basic shell in from shadcn (literally anything) as a dashboard and redirect there after logon
+  [ ]
+
+  ## Resources 
+  https://way-too-mainstream.vercel.app/articles/add-authorization-flash-to-inertia-rails-app
+  https://github.com/inertiajs/inertia-rails/issues/27 
+  (Evil Martians Blog)[https://evilmartians.com/chronicles/inertiajs-in-rails-a-new-era-of-effortless-integration]
+  (Vue Rails Inertia Tutorial) [https://codeando.dev/posts/rails-inertiajs/]
+  (Rails and Inertia Medium Article)[https://medium.com/@sanchez.dav90/rails-and-inertia-js-the-modern-monolith-f898e22ad47f]
+  (Ping CRM in Rails)[https://github.com/ledermann/pingcrm]
+
+
+
+  ## Ongoing questions about this stack
+  - Am I using the React Layout correctly? Do I have to wrap every page in Layout or is there a different way to do it?
+  - Review Vite config -> seems kinda delicate 
+
+
+  ## Possible React Things
+  - Quill 
+  - Date-fns (grid render)
+  - https://github.com/yoopta-editor/Yoopta-Editor?tab=readme-ov-file
+  - Just cool https://www.reddit.com/r/reactjs/comments/neo6ql/i_created_a_notionlike_database_in_react/

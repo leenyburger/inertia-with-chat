@@ -12,10 +12,10 @@ import {
   Plus, 
   Minus 
 } from 'lucide-react'
-import { Head } from '@inertiajs/react'
-import { Link } from '@inertiajs/react'
+import { Head, Link, usePage } from '@inertiajs/react'
 
 export default function Home() {
+  const { auth } = usePage().props 
   const [openFaq, setOpenFaq] = React.useState<number | null>(null)
 
   const faqs = [
@@ -56,13 +56,25 @@ export default function Home() {
                 <span className="font-bold text-xl">SaaS Marketing Gym</span>
               </div>
               <div className="flex items-center gap-4">
-                <a 
-                  href="/login" 
-                  className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors px-4 py-2 rounded-full"
-                >
-                  <LogIn className="w-4 h-4" />
-                  <span>Log In</span>
-                </a>
+                {auth ? (
+                  <Link 
+                    href="/logout" 
+                    method="delete" 
+                    as="button"
+                    className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors px-4 py-2 rounded-full"
+                  >
+                    <LogIn className="w-4 h-4" />
+                    <span>Log Out</span>
+                  </Link>
+                ) : (
+                  <Link 
+                    href="/login" 
+                    className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors px-4 py-2 rounded-full"
+                  >
+                    <LogIn className="w-4 h-4" />
+                    <span>Log In</span>
+                  </Link>
+                )}
                 <a 
                   href="https://forms.gle/xvJVXJ2ht6MuEQfBA" 
                   target="_blank" 

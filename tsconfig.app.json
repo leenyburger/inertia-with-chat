@@ -14,10 +14,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./app/frontend/*"]
     }
   },
-  "include": ["app/frontend/**/*.ts", "app/frontend/**/*.tsx"],
+  "include": ["app/frontend/**/*.ts", "app/frontend/**/*.tsx", "lib/utils.ts", "lib/utils.ts"],
   "exclude": ["node_modules"]
 }
