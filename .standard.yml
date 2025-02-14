@@ -1,0 +1,11 @@
+# .standard.yml
+fix: true  # Auto-fix violations when possible
+parallel: true  # Use parallel processing
+
+ignore:  # Files to be ignored
+  - 'db/schema.rb'
+  - 'vendor/**/*'
+  - 'bin/**/*'
+  - 'node_modules/**/*'
+  - 'tmp/**/*'
+  - 'public/**/*' 

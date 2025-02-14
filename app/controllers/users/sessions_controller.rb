@@ -3,9 +3,9 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
- # GET /login
+  # GET /login
   def new
-    render inertia: 'Auth/Login', props: {}
+    render inertia: "Auth/Login", props: {}
   end
 
   # POST /resource/sign_in

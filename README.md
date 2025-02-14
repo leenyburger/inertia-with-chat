@@ -59,3 +59,10 @@ heroku config:set NPM_CONFIG_INCLUDE='dev' YARN_PRODUCTION=false
   ## Ongoing questions about this stack
   - Am I using the React Layout correctly? Do I have to wrap every page in Layout or is there a different way to do it?
   - Review Vite config -> seems kinda delicate 
+
+
+  ## Possible React Things
+  - Quill 
+  - Date-fns (grid render)
+  - https://github.com/yoopta-editor/Yoopta-Editor?tab=readme-ov-file
+  - Just cool https://www.reddit.com/r/reactjs/comments/neo6ql/i_created_a_notionlike_database_in_react/
