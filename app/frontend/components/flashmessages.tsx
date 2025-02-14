@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { usePage } from '@inertiajs/react'
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { XCircle, CheckCircle, AlertCircle } from "lucide-react"
+import { XCircle, CheckCircle, AlertCircle, X } from "lucide-react"
+import { useState } from 'react'
 
 interface Flash {
   notice?: string
@@ -15,8 +16,27 @@ interface PageProps {
   has_flash: boolean
 }
 
-const FlashMessages: React.FC = () => {
-  const { flash, has_flash } = usePage().props as PageProps
+interface FlashMessage {
+  type: string
+  message: string
+  visible: boolean
+}
+
+const FlashMessages = () => {
+  const { flash, has_flash } = usePage().props as unknown as PageProps
+  const [visibleMessages, setVisibleMessages] = useState<{[key: string]: boolean}>({})
+
+  useEffect(() => {
+    if (has_flash) {
+      const initialVisibility = Object.keys(flash).reduce((acc, key) => {
+        if (flash[key as keyof Flash]) {
+          acc[key] = true
+        }
+        return acc
+      }, {} as {[key: string]: boolean})
+      setVisibleMessages(initialVisibility)
+    }
+  }, [flash, has_flash])
 
   if (!has_flash) return null
 
@@ -44,18 +64,31 @@ const FlashMessages: React.FC = () => {
     }
   }
 
+  const handleDismiss = (type: string) => {
+    setVisibleMessages(prev => ({
+      ...prev,
+      [type]: false
+    }))
+  }
+
   return (
-    <div className="fixed top-4 right-4 z-50 space-y-2 min-w-[320px]">
-      {Object.entries(flash).map(([type, message]) => (
-        message && (
-          <Alert key={type} className={`flex items-center ${getAlertClass(type)}`}>
-            {getIcon(type)}
-            <AlertDescription className="ml-2">
-              {message}
-            </AlertDescription>
-          </Alert>
-        )
-      ))}
+    <div className="fixed inset-0 flex items-start justify-center z-50 pointer-events-none pt-20">
+      <div className="space-y-2 min-w-[320px] animate-in slide-in-from-top duration-300">
+        {Object.entries(flash).map(([type, message]) => (
+          message && visibleMessages[type] && (
+            <Alert key={type} className={`flex items-center pointer-events-auto relative ${getAlertClass(type)}`}>
+              {getIcon(type)}
+              <AlertDescription className="ml-2">
+                {message}
+              </AlertDescription>
+              <X 
+                className="h-4 w-4 cursor-pointer absolute top-2 right-2"
+                onClick={() => handleDismiss(type)}
+              />
+            </Alert>
+          )
+        ))}
+      </div>
     </div>
   )
 }
